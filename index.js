@@ -16,6 +16,9 @@ async function fetchICS(url) {
 }
 
 const app = express();
+const PORT = process.env.PORT || 3000
+
+
 
 // Set up body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -88,7 +91,9 @@ app.post('/convert', upload.single('file'), async (req, res) => {
   res.send(buffer);
 });
 
-
+app.listen(PORT, () => {
+    console.log(`listening on port ${PORT}`)
+})
 
 // Helper function to format hours and minutes
 function formatHoursMinutes(totalHours) {
