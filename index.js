@@ -88,10 +88,7 @@ app.post('/convert', upload.single('file'), async (req, res) => {
   res.send(buffer);
 });
 
-// Start server
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
-});
+
 
 // Helper function to format hours and minutes
 function formatHoursMinutes(totalHours) {
