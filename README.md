@@ -10,7 +10,7 @@ npm install express body-parser multer fs ical iconv-lite
 
 the run the app with this command.
 
-node app.js
+node index.js
 
 
 
