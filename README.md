@@ -1,4 +1,4 @@
-# ICS2CSV
+# ICS2CSV  ICS2XLS  ICS2EXCEL
 node js script that turn a ICS calander to csv .
 
 
@@ -45,3 +45,20 @@ Summary	Start Date	End Date	Start Time	End Time	Total Hours
 
 
 enjoy
+
+
+
+
+NOTE
+
+
+for windows Users below win 8.1 you will need to create 2 Environment Variables if NODE_PATH is not installed .
+
+
+Go to System-Properties (run: systempropertiesadvanced.exe), in Advanced tab, click Environment Variables.
+
+Still on the System variables, click 'New', add "NODE_PATH" with value "C:\nodejs64\node_modules" , and click OK.
+
+click 'New' again, add "NODE_SKIP_PLATFORM_CHECK" with value "1", and click OK.
+
+and run the exe.
