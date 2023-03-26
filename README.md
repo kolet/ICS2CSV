@@ -2,6 +2,8 @@
 node js script that turn a ICS calander to csv .
 
 
+can be checked here .
+
 to run the script you will need to download and use nodejs and npm , 
 
 first install the dependenci like that.
