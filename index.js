@@ -62,7 +62,7 @@ app.post('/convert', upload.single('file'), async (req, res) => {
   const events = ical.parseICS(content.toString());
 
   // Define headers and calculate total hours for each event
-  const headers = ['Summary', 'Start Date', 'End Date', 'Start Time', 'End Time', 'Total Hours', 'Attendee', 'Location'];
+  const headers = ['Summary', 'Start Date', 'End Date', 'Start Time', 'End Time', 'Total Hours', 'PARTICIPANT', 'Location'];
   const rows = Object.values(events).map(event => {
     const summary = event.summary || '';
     const startDate = event.start && event.start.toLocaleDateString() || '';
@@ -70,12 +70,12 @@ app.post('/convert', upload.single('file'), async (req, res) => {
     const startTime = event.start && event.start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) || '';
     const endTime = event.end && event.end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) || '';
     const totalHours = event.start && event.end && formatHoursMinutes(((new Date(event.end) - new Date(event.start)) / (1000 * 60 * 60))) || '';
-    const attendee = event.attendee ; 
+    const PARTICIPANT = event.PARTICIPANT ; 
     const location = event.location ;
     
     
     // Return an array of values for each row
-    return [summary, startDate, endDate, startTime, endTime, totalHours, attendee, location];
+    return [summary, startDate, endDate, startTime, endTime, totalHours, PARTICIPANT, location];
   });
 
   // Add UTF-8 BOM to the beginning of the CSV data to ensure proper encoding
